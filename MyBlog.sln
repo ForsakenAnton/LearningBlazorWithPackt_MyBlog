@@ -13,9 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorWebAssembly.Shared", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Components", "Components\Components.csproj", "{A986737A-D2F5-4F55-BE63-50F4906A5CDC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{E30F270D-62C1-4A09-B24A-83AEB730CD76}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data", "Data\Data.csproj", "{E30F270D-62C1-4A09-B24A-83AEB730CD76}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data.Models", "Data.Models\Data.Models.csproj", "{D70A03FC-5C28-4F60-8099-1007B56A7D7A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data.Models", "Data.Models\Data.Models.csproj", "{D70A03FC-5C28-4F60-8099-1007B56A7D7A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

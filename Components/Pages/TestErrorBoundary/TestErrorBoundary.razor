@@ -1,0 +1,15 @@
+﻿@page "/errorboundary"
+
+<ErrorBoundary Context=ex>
+    <ChildContent>
+        <p>@(1 / zero)</p>
+    </ChildContent>
+    <ErrorContent>
+        An error occurred
+        @ex.Message
+    </ErrorContent>
+</ErrorBoundary>
+
+@code {
+    int zero = 0;
+}

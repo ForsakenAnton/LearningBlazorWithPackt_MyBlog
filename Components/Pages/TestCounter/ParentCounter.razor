@@ -1,0 +1,24 @@
+﻿@page "/parentcounter"
+
+<h3>ParentCounter</h3>
+
+@* <CounterWithParameter IncrementAmount="@incrementamount" CurrentCount="@currentcount"></CounterWithParameter> *@
+
+@* Below are the same things *@
+@* <CounterWithParameter IncrementAmount="@incrementamount"
+                      @bind-CurrentCount="currentcount">
+</CounterWithParameter> *@
+
+<CounterWithParameter IncrementAmount="@incrementamount"
+                      @bind-CurrentCount="currentcount"
+                      @bind-CurrentCount:event="CurrentCountChanged">
+</CounterWithParameter>
+
+<p>
+    The current count is: @currentcount
+</p>
+
+@code {
+    int incrementamount = 10;
+    int currentcount = 0;
+}

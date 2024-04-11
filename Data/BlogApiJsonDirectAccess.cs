@@ -38,7 +38,8 @@ public class BlogApiJsonDirectAccess : IBlogApi
     }
 
 
-    public async Task<List<BlogPost>?> GetBlogPostsAsync(
+    //public async Task<List<BlogPost>?> GetBlogPostsAsync(
+    public async Task<List<BlogPost>> GetBlogPostsAsync(
         int numberofposts,
         int startindex)
     {
