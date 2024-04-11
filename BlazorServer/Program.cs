@@ -15,11 +15,13 @@ builder.Services
     .AddOptions<BlogApiJsonDirectAccessSetting>()
     .Configure(options =>
     {
-        options.DataPath = @"..\..\..\Data\";
+        //options.DataPath = @"..\..\..\Data\";
+        options.DataPath = @"..\..\Data\";
         options.BlogPostsFolder = "Blogposts";
         options.TagsFolder = "Tags";
         options.CategoriesFolder = "Categories";
     });
+
 builder.Services.AddScoped<IBlogApi, BlogApiJsonDirectAccess>();
 
 var app = builder.Build();
