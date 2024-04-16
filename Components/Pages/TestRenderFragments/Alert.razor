@@ -1,10 +1,23 @@
-﻿<div class="@($"alert alert-{Style.ToString().ToLower()}")" role="alert">
+﻿@typeparam TMessage
+
+<div class="@($"alert alert-{Style.ToString().ToLower()}")" role="alert">
     @* A simple primary alert—check it out! *@
 
     @ChildContent
+    
+    @if (TypedChildContent is not null && ExampleMessage is not null)
+    {
+        @TypedChildContent(ExampleMessage)
+    }
 </div>
 
 @code {
+    [Parameter]
+    public RenderFragment<TMessage>? TypedChildContent { get; set; }
+
+    [Parameter]
+    public TMessage? ExampleMessage { get; set; }
+
     [Parameter]
     public RenderFragment ChildContent { get; set; } = @<b>This is a dafault value</b>;
 
