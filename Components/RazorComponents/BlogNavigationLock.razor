@@ -37,7 +37,7 @@
     {
         if (CurrentEditContext.IsModified() && CheckNavigation)
         {
-            var isConfirmed = await JSRuntime.InvokeAsync<bool>(
+            bool isConfirmed = await JSRuntime.InvokeAsync<bool>(
                 "confirm",
                 InternalNavigationMessage);
 

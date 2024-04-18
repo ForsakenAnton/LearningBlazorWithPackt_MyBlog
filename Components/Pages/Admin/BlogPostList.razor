@@ -23,8 +23,13 @@
             TotalBlogposts = await _api.GetBlogPostCountAsync();
         }
 
-        int numblogposts = Math.Min(request.Count, TotalBlogposts - request.StartIndex);
-        List<BlogPost> posts = (await _api.GetBlogPostsAsync(numblogposts, request.StartIndex)) ?? new();
+        int numblogposts = Math.Min(
+            request.Count,
+            TotalBlogposts - request.StartIndex);
+
+        List<BlogPost> posts = (await _api.GetBlogPostsAsync(
+            numblogposts, 
+            request.StartIndex)) ?? new();
 
         return new ItemsProviderResult<BlogPost>(posts, TotalBlogposts);
     }
