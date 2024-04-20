@@ -1,6 +1,6 @@
 using Data;
 using Data.Models.Interfaces;
-using Microsoft.AspNetCore.ResponseCompression;
+using BlazorWebAssembly.Server.EndPoints;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,8 +8,6 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
-
-var app = builder.Build();
 
 builder.Services.AddOptions<BlogApiJsonDirectAccessSetting>()
  .Configure(options =>
@@ -19,7 +17,11 @@ builder.Services.AddOptions<BlogApiJsonDirectAccessSetting>()
      options.TagsFolder = "Tags";
      options.CategoriesFolder = "Categories";
  });
+
 builder.Services.AddScoped<IBlogApi, BlogApiJsonDirectAccess>();
+
+var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -39,6 +41,8 @@ app.UseBlazorFrameworkFiles();
 app.UseStaticFiles();
 
 app.UseRouting();
+
+app.MapBlogPostApi();
 
 
 app.MapRazorPages();
