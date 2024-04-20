@@ -1,3 +1,5 @@
+using Data;
+using Data.Models.Interfaces;
 using Microsoft.AspNetCore.ResponseCompression;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,6 +10,16 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
 
 var app = builder.Build();
+
+builder.Services.AddOptions<BlogApiJsonDirectAccessSetting>()
+ .Configure(options =>
+ {
+     options.DataPath = @"..\..\..\Data\";
+     options.BlogPostsFolder = "Blogposts";
+     options.TagsFolder = "Tags";
+     options.CategoriesFolder = "Categories";
+ });
+builder.Services.AddScoped<IBlogApi, BlogApiJsonDirectAccess>();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
