@@ -50,10 +50,10 @@
             request.Count, 
             totalBlogposts - request.StartIndex);
 
-        List<BlogPost> blogposts = await _api.GetBlogPostsAsync(
+        List<BlogPost>? blogposts = await _api.GetBlogPostsAsync(
             numblogposts,
             request.StartIndex);
 
-        return new ItemsProviderResult<BlogPost>(blogposts, totalBlogposts);
+        return new ItemsProviderResult<BlogPost>(blogposts!, totalBlogposts);
     }
 }
