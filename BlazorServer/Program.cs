@@ -5,6 +5,7 @@ using Data;
 using Auth0.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Components.RazorComponents;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -32,6 +33,8 @@ builder.Services
          options.Domain = builder.Configuration["Auth0:Authority"] ?? "";
          options.ClientId = builder.Configuration["Auth0:ClientId"] ?? "";
      });
+
+builder.Services.AddTransient<ILoginStatus, LoginStatus>();
 
 var app = builder.Build();
 

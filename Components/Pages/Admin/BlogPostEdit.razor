@@ -1,6 +1,8 @@
 ﻿@page "/admin/blogposts/new"
 @page "/admin/blogposts/{Id}"
 
+@attribute [Authorize]
+
 @inject IBlogApi _api
 @inject NavigationManager _manager
 

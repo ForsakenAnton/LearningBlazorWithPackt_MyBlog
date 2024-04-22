@@ -1,5 +1,7 @@
 ﻿@page "/admin/blogposts"
 
+@attribute [Authorize]
+
 @inject IBlogApi _api
 
 <a href="/admin/blogposts/new">New blog post</a>
