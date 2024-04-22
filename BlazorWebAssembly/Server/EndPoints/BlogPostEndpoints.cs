@@ -3,7 +3,7 @@ using Data.Models.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace BlazorWebAssembly.Server.EndPoints;
+namespace BlazorWebAssembly.Server.Endpoints;
 
 public static class BlogPostEndpoints
 {

@@ -1,6 +1,6 @@
 using Data;
 using Data.Models.Interfaces;
-using BlazorWebAssembly.Server.EndPoints;
+using BlazorWebAssembly.Server.Endpoints;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -43,6 +43,7 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.MapBlogPostApi();
+app.MapCategoryApi();
 
 
 app.MapRazorPages();
