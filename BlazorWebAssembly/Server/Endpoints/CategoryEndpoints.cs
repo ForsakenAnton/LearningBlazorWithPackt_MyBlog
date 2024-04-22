@@ -25,6 +25,7 @@ public static class CategoryEndpoints
             async (IBlogApi api, string id) =>
             {
                 await api.DeleteCategoryAsync(id);
+
                 return Results.Ok();
             })
             .RequireAuthorization();

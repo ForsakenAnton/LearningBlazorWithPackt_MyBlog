@@ -44,6 +44,7 @@ app.UseRouting();
 
 app.MapBlogPostApi();
 app.MapCategoryApi();
+app.MapTagApi();
 
 
 app.MapRazorPages();
