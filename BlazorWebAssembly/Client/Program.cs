@@ -37,7 +37,8 @@ builder.Services.AddOidcAuthentication(options =>
         "audience",
         builder.Configuration["Auth0:Audience"]);
 
-});
+})
+.AddAccountClaimsPrincipalFactory<ArrayClaimsPrincipalFactory<RemoteUserAccount>>();
 
 builder.Services.AddTransient<ILoginStatus, LoginStatusWasm>();
 
