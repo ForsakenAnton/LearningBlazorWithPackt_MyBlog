@@ -14,13 +14,13 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
 
 builder.Services.AddOptions<BlogApiJsonDirectAccessSetting>()
- .Configure(options =>
- {
-     options.DataPath = @"..\..\..\Data\";
-     options.BlogPostsFolder = "Blogposts";
-     options.TagsFolder = "Tags";
-     options.CategoriesFolder = "Categories";
- });
+     .Configure(options =>
+     {
+         options.DataPath = @"..\..\..\Data\";
+         options.BlogPostsFolder = "Blogposts";
+         options.TagsFolder = "Tags";
+         options.CategoriesFolder = "Categories";
+     });
 
 builder.Services.AddScoped<IBlogApi, BlogApiJsonDirectAccess>();
 
