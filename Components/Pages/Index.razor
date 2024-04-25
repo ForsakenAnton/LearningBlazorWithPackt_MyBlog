@@ -2,6 +2,7 @@
 
 @using Data.Models.Interfaces
 @using Data.Models
+@using Markdig;
 
 @inject IBlogApi _api
 
@@ -23,6 +24,10 @@
     
     <Virtualize ItemsProvider="LoadPosts" Context="p">
         @* <li style="font-size:150px"><a href="/Post/@p.Id">@p.Title</a></li> *@
+
+        <h2>@p.Title</h2>
+        @((MarkupString)Markdig.Markdown.ToHtml(
+            new string(p.Text.Take(100).ToArray()), pipeline))
         <li><a href="/Post/@p.Id">@p.Title</a></li>
     </Virtualize>
 </ul>
@@ -38,6 +43,18 @@
     // }
 
     public int totalBlogposts { get; set; }
+
+
+    MarkdownPipeline pipeline = default!;
+    protected override Task OnInitializedAsync()
+    {
+        pipeline = new MarkdownPipelineBuilder()
+            .UseEmojiAndSmiley()
+            .Build();
+
+        return base.OnInitializedAsync();
+    }
+
 
     private async ValueTask<ItemsProviderResult<BlogPost>> LoadPosts(ItemsProviderRequest request)
     {
