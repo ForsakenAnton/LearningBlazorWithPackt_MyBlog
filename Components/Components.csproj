@@ -4,7 +4,15 @@
     <TargetFramework>net7.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Pages\Tests\JSInterop\JSInteropInWebAssembly\**" />
+    <Content Remove="Pages\Tests\JSInterop\JSInteropInWebAssembly\**" />
+    <EmbeddedResource Remove="Pages\Tests\JSInterop\JSInteropInWebAssembly\**" />
+    <None Remove="Pages\Tests\JSInterop\JSInteropInWebAssembly\**" />
+  </ItemGroup>
 
 
   <ItemGroup>
