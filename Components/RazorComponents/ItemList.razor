@@ -44,7 +44,7 @@
     [Parameter]
     public EventCallback<ItemType> SelectEvent { get; set; }
 
-    IJSObjectReference jsmodule;
+    IJSObjectReference jsmodule = default!;
 
     private async Task<bool> ShouldDelete()
     {
