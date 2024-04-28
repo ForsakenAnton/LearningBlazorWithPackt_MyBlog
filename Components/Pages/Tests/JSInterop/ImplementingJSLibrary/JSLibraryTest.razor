@@ -1,0 +1,22 @@
+﻿@page "/jslibrarytest"
+
+<ImplementingJSLibrary Json="@chartjson">
+</ImplementingJSLibrary>
+
+@code {
+
+    string chartjson = @" {
+         chart: { type: 'pie'},
+         series: [{
+            data: [{
+                name: 'Does not look like Pacman',
+                color:'skyblue',
+                y: 20,
+            }, {
+                name: 'Looks like Pacman',
+                color:'khaki',
+                y: 80
+            }]
+         }]
+    }";
+}
