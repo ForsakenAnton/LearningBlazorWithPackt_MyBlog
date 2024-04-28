@@ -14,7 +14,7 @@ public class ArrayClaimsPrincipalFactory<TAccount> :
     { }
 
     public async override ValueTask<ClaimsPrincipal> CreateUserAsync(
-        TAccount account, 
+        TAccount account,
         RemoteAuthenticationUserOptions options)
     {
         var user = await base.CreateUserAsync(account, options);
@@ -23,7 +23,7 @@ public class ArrayClaimsPrincipalFactory<TAccount> :
         if (account != null)
         {
             foreach (var kvp in account.AdditionalProperties)
-        {
+            {
                 string name = kvp.Key;
                 object value = kvp.Value;
                 if (value != null && (value is JsonElement element && element.ValueKind == JsonValueKind.Array))
@@ -32,7 +32,7 @@ public class ArrayClaimsPrincipalFactory<TAccount> :
 
                     var claims = element
                         .EnumerateArray()
-                        .Select(x => new Claim(kvp.Key,x.ToString()));
+                        .Select(x => new Claim(kvp.Key, x.ToString()));
 
                     claimsIdentity?.AddClaims(claims);
                 }
