@@ -40,6 +40,7 @@ builder.Services
 builder.Services.AddTransient<ILoginStatus, LoginStatus>();
 
 builder.Services.AddScoped<IBrowserStorage, BlogProtectedBrowserStorage>();
+builder.Services.AddSingleton<IBlogNotificationService, BlazorServerBlogNotificationService>();
 
 var app = builder.Build();
 

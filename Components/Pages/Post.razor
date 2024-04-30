@@ -3,6 +3,11 @@
 @inject IBlogApi _api
 @inject NavigationManager _navman
 
+@using Components.Interfaces
+@inject IBlogNotificationService notificationService
+@implements IDisposable
+
+
 @using Markdig;
 
 @if (BlogPost != null)
@@ -31,6 +36,8 @@
     MarkdownPipeline pipeline = default!;
     protected override Task OnInitializedAsync()
     {
+        notificationService.BlogPostChanged += PostChanged;
+
         pipeline = new MarkdownPipelineBuilder()
            .UseEmojiAndSmiley()
            .Build();
@@ -42,5 +49,20 @@
     {
         BlogPost = await _api.GetBlogPostAsync(BlogPostId);
         await base.OnParametersSetAsync();
+    }
+
+
+    private async void PostChanged(BlogPost post)
+    {
+        if (BlogPost?.Id == post.Id)
+        {
+            BlogPost = post;
+            await InvokeAsync(() => this.StateHasChanged());
+        }
+    }
+
+    void IDisposable.Dispose()
+    {
+        notificationService.BlogPostChanged -= PostChanged;
     }
 }
