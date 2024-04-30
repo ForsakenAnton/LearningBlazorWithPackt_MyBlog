@@ -7,6 +7,10 @@ using Data;
 using Data.Models.Interfaces;
 using Components.RazorComponents;
 
+using Blazored.SessionStorage;
+using Components.Interfaces;
+using BlazorWebAssembly.Client.Services;
+
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");
@@ -41,5 +45,8 @@ builder.Services.AddOidcAuthentication(options =>
 .AddAccountClaimsPrincipalFactory<ArrayClaimsPrincipalFactory<RemoteUserAccount>>();
 
 builder.Services.AddTransient<ILoginStatus, LoginStatusWasm>();
+
+builder.Services.AddBlazoredSessionStorage();
+builder.Services.AddScoped<IBrowserStorage, BlogBrowserStorage>();
 
 await builder.Build().RunAsync();
