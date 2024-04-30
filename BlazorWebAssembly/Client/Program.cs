@@ -49,4 +49,6 @@ builder.Services.AddTransient<ILoginStatus, LoginStatusWasm>();
 builder.Services.AddBlazoredSessionStorage();
 builder.Services.AddScoped<IBrowserStorage, BlogBrowserStorage>();
 
+builder.Services.AddSingleton<IBlogNotificationService, BlazorWebAssemblyBlogNotificationService>();
+
 await builder.Build().RunAsync();
