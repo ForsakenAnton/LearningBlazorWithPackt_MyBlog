@@ -7,6 +7,9 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Components.RazorComponents;
 
+using Components.Interfaces;
+using BlazorServer.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -35,6 +38,8 @@ builder.Services
      });
 
 builder.Services.AddTransient<ILoginStatus, LoginStatus>();
+
+builder.Services.AddScoped<IBrowserStorage, BlogProtectedBrowserStorage>();
 
 var app = builder.Build();
 
