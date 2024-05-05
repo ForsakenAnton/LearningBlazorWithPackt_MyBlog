@@ -17,7 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data", "Data\Data.csproj", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data.Models", "Data.Models\Data.Models.csproj", "{D70A03FC-5C28-4F60-8099-1007B56A7D7A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyBlog.Tests", "MyBlog.Tests\MyBlog.Tests.csproj", "{DC61F884-54B1-4BA4-AA09-903437BF0897}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyBlog.Tests", "MyBlog.Tests\MyBlog.Tests.csproj", "{DC61F884-54B1-4BA4-AA09-903437BF0897}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
