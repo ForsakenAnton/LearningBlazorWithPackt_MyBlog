@@ -25,10 +25,13 @@
     <Virtualize ItemsProvider="LoadPosts" Context="p">
         @* <li style="font-size:150px"><a href="/Post/@p.Id">@p.Title</a></li> *@
 
-        <h2>@p.Title</h2>
-        @((MarkupString)Markdig.Markdown.ToHtml(
-            new string(p.Text.Take(100).ToArray()), pipeline))
-        <li><a href="/Post/@p.Id">@p.Title</a></li>
+        <article>
+            <h2>@p.Title</h2>
+            @((MarkupString)Markdig.Markdown.ToHtml(
+                new string(p.Text.Take(100).ToArray()), pipeline))
+
+            <a href="/Post/@p.Id">Read more</a>
+        </article>
     </Virtualize>
 </ul>
 
