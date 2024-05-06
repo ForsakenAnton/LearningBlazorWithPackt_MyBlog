@@ -19,6 +19,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data.Models", "Data.Models\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyBlog.Tests", "MyBlog.Tests\MyBlog.Tests.csproj", "{DC61F884-54B1-4BA4-AA09-903437BF0897}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorHybridApp", "BlazorHybridApp\BlazorHybridApp.csproj", "{CC390B93-3407-4CDF-B489-02C6CE04F0C0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,12 @@ Global
 		{DC61F884-54B1-4BA4-AA09-903437BF0897}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DC61F884-54B1-4BA4-AA09-903437BF0897}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DC61F884-54B1-4BA4-AA09-903437BF0897}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC390B93-3407-4CDF-B489-02C6CE04F0C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC390B93-3407-4CDF-B489-02C6CE04F0C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC390B93-3407-4CDF-B489-02C6CE04F0C0}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{CC390B93-3407-4CDF-B489-02C6CE04F0C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC390B93-3407-4CDF-B489-02C6CE04F0C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC390B93-3407-4CDF-B489-02C6CE04F0C0}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
